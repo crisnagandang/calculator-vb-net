@@ -39,6 +39,7 @@
 
         DisplayValue()
     End Sub
+
     Private Sub ProcessOperatorLogic(input As String)
         If Not operatorFlagIsOn Then
             'If Equals was previously clicked, turn it off
@@ -58,15 +59,19 @@
     Private Sub TurnOperatorFlagOff()
         operatorFlagIsOn = False
     End Sub
+
     Private Sub TurnOperatorFlagOn()
         operatorFlagIsOn = True
     End Sub
+
     Private Sub TurnEqualsFlagOff()
         equalsFlagIsOn = False
     End Sub
+
     Private Sub TurnEqualsFlagOn()
         equalsFlagIsOn = True
     End Sub
+
     Private Sub ProcessFunctionLogic(input As String)
         If input = "AC" Then
             ResetValues()
@@ -80,6 +85,7 @@
             currentValue = "0"
         End If
     End Sub
+
     Private Sub SetCurrentValue(input As String)
         'Check if the current value has dot
         Dim result = currentValue.IndexOf(".")
@@ -175,9 +181,11 @@
     Private Sub btnNumber9_Click(sender As Object, e As EventArgs) Handles btnNumber9.Click
         InputController("9")
     End Sub
+
     Private Sub btnDoubleZero_Click(sender As Object, e As EventArgs) Handles btnDoubleZero.Click
         InputController("00")
     End Sub
+
     Private Sub btnDot_Click(sender As Object, e As EventArgs) Handles btnDot.Click
         InputController(".")
     End Sub
