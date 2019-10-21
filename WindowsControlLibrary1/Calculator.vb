@@ -33,7 +33,7 @@
         ElseIf type = "function" Then
             ProcessFunctionLogic(input)
         ElseIf type = "value" Then
-            operatorFlagIsOn = False
+            TurnOperatorFlagOff()
             SetCurrentValue(input)
         End If
 
