@@ -7,10 +7,20 @@
     Private newValueFlag As Boolean
     Private equalsFlagIsOn As Boolean
 
+    Private Sub TurnOperatorFlagOff()
+        operatorFlagIsOn = False
+    End Sub
 
-    Private Sub Calculator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ResetValues()
-        DisplayValue()
+    Private Sub TurnOperatorFlagOn()
+        operatorFlagIsOn = True
+    End Sub
+
+    Private Sub TurnEqualsFlagOff()
+        equalsFlagIsOn = False
+    End Sub
+
+    Private Sub TurnEqualsFlagOn()
+        equalsFlagIsOn = True
     End Sub
 
     Private Sub ResetValues()
@@ -21,6 +31,11 @@
         newValueFlag = False
         'errorFlag = False
         equalsFlagIsOn = False
+    End Sub
+
+    Private Sub Calculator_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ResetValues()
+        DisplayValue()
     End Sub
 
     Private Sub InputController(ByVal input As String, Optional type As String = "value")
@@ -54,22 +69,6 @@
         End If
 
         currentOperator = input
-    End Sub
-
-    Private Sub TurnOperatorFlagOff()
-        operatorFlagIsOn = False
-    End Sub
-
-    Private Sub TurnOperatorFlagOn()
-        operatorFlagIsOn = True
-    End Sub
-
-    Private Sub TurnEqualsFlagOff()
-        equalsFlagIsOn = False
-    End Sub
-
-    Private Sub TurnEqualsFlagOn()
-        equalsFlagIsOn = True
     End Sub
 
     Private Sub ProcessFunctionLogic(input As String)
